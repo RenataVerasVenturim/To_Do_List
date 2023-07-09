@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Estudo de eventos">
+    <title>To Do List</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <img src="logop.png" alt="logo Renata Veras Venturim">
+            <ul>
+                <li><a href="https://github.com/RenataVerasVenturim" class="nav_mouse" target="_blank">GITHUB</a>
+                <li><a href="teladelogin.html" class="btn">LOGIN</a>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div id="f_form" name="f_form">
+        
+        <h1>
+            TAREFAS DO DIA:
+        </h1>
+
+        <input type="text" id="texto_usuario" name="texto_usuario" placeholder="Digite a tarefa" >
+        <br>
+        <input type="button" class="f_botao" value="INSERIR">
+        <input type="button" class="f_botao" onclick="excluir()" value="EXCLUIR">
+        
+            <ol id="f_lista" name="f_lista">
+
+            </ol>
+        </div>
+    </main>
+    <footer>
+        &copy; 2023 Renata Veras Venturim. Todos os direitos reservados.</p>
+    </footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="description" content="Site UFF">
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <title>UFF</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <header>
+        <nav>
+            <img src="logop.png" alt="logo undergroung fitness"></a>
+            <ul>
+                <li><a href="index.html" class="nav_mouse">Voltar</a>
+            </ul>
+        </nav>
+    </header>
+    
+            <main>
+            <div>
+                Validar apenas quando :
+                <br>E mail:"renata_venturim@hotmail.com"
+                <br>Senha:"1234"
+            </div>
+            
+            <div id="box1">
+                <form action="script.js" method="post" name="f_login" id="f_login">
+                    
+                    
+                    <h1><strong>Login</strong></h1>
+                    
+                    <p class="dadosdeacesso"><label for="f_email">E mail:</label><input type="text" name="f_email" id="f_email" placeholder="Digite seu e mail"  maxlength="27"></p>
+                    
+                    <p class="dadosdeacesso"><label for="f_senha">Senha</label><input type="password" class="dadosdeacesso" name="f_senha" id="f_senha" placeholder="Digite sua senha"  maxlength="4"></p>
+                    
+                    <input type="button" value="ENTRAR" onclick="verificar_acesso()" class="btn" name="botao">
+                    <input type="reset" value="LIMPAR" class="btn" name="botao">
+                </form>
+            </div>
+        </main>		
+            
+        <footer>
+            <p>&copy; 2023 Renata Veras Venturim. Todos os direitos reservados.</p>
+        </footer>
+        
+    </main>
+    
+    <script>
+
+//--
+function verificar_acesso(){
+
+/*Declaração das variáveis*/
+var email;
+var senha;
+/*Entrada de dados*/
+
+email=document.f_login.f_email.value.toUpperCase();
+senha=document.f_login.f_senha.value;       
+
+/*Saída de dados*/
+    
+    if (email !== 'RENATA_VENTURIM@HOTMAIL.COM'){
+        email=document.f_login.f_email.value;
+    
+        window.alert('E mail não encontrado e/ou senha incorreta');
+    }
+
+        else {if(senha !=='1234'){
+            window.alert('Acesso não autorizado');
+            }   
+            else{
+                window.alert('Acesso autorizado');
+                window.open('https://renataverasventurim.github.io/Profile/');
+            }
+        }
+    }
+//-->
+    </script>
+    
+</body>
+</html>
