@@ -14,6 +14,7 @@ var b;
     /*Adicionar evento aos botões */
     a.addEventListener('mouseenter',entrar)
     a.addEventListener('mouseout',sair)
+    a.addEventListener('touchend',sair)
     a.addEventListener('click',inserir)
 
     function entrar(){
@@ -32,17 +33,17 @@ var b;
     var tarefa;
     var lista_tarefas;
     var texto;
-
+    var n=0;
 
     /*Entrada de dados*/
-    texto=document.getElementById('texto_usuario').value;
-
-
+   
     //invalidar campo vazio
 
     function inserir(){
+        
         texto=document.getElementById('texto_usuario').value;
 
+        
         if(texto !== ""){      
         a.style.background='gray';
         a.value='INSERIDO';
@@ -58,21 +59,14 @@ var b;
         lista_tarefas.appendChild(tarefa); //inserir
 
 
-    /*OBJETIVO: EXCLUIR ELEMENTO DOM*/
-    /*Declarar variáveis */
-
-        /*Entrada de dados */
-
-        /*Saída de dados */
-
-
         document.getElementById('texto_usuario').value="";//esvaziar campo de texto
         }
 
     else{
         window.alert('Inserir tarefa!')
         }
-    }
+        
+     }
     /*OBJETIVO: Quando clicar Enter, inserir tarefa */
     var input_text;
 
@@ -95,17 +89,39 @@ var b;
         b.addEventListener('click', clicar2)
         b.addEventListener('mouseenter',entrar2)
         b.addEventListener('mouseout',sair2)
+        
 
-        function clicar2(){
-            b.style.background='gray';
-            b.value='EXCLUÍDO';
-            window.alert('Em desenvolvimento')
-        }
         function entrar2(){
             b.style.background='red';
             b.value='EXCLUIR';
         }
         function sair2(){
-            b.style.background='black';
-            b.value='EXCLUIR';
+            b.style.background='blacK';
+            b.value='EXCLUIR'
         }
+        /*EXCLUIR ELEMENTO DOM */
+        function clicar2(){
+            b.style.background='red';
+            b.value='SELECIONE';
+      
+        /*SELECIONAR ELEMENTO DOM */
+        
+        var selecionado;
+        var listaItens;
+
+        listaItens=document.getElementsByTagName('li');
+
+        for(var selecionado =0 ; selecionado <listaItens.length;selecionado++){
+            listaItens[selecionado].addEventListener('click',excluir_selecionado);            
+        }
+
+        
+        function excluir_selecionado(){
+        
+
+        this.parentNode.removeChild(this);
+        }
+    }
+        
+        
+        
